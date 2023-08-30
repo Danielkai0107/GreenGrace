@@ -15,6 +15,7 @@ function WeddingDeco() {
   const [dataReady, setDataReady] = useState()
   const [filteredProducts, setFilteredProducts] = useState(products);
   const [isTopButton, setIsTopButton] = useState(false);
+  const [productZIndexes, setProductZIndexes] = useState({});
   const [selectedProducts, setSelectedProducts] = useState(JSON.parse(localStorage.getItem('selectedProducts')) || []);
   const totalSelected = selectedProducts.reduce(
     (acc, product) => acc + product.quantity,
@@ -27,17 +28,11 @@ function WeddingDeco() {
 
   // Handler Functions
   const handleMoveToFront = (pk) => {
-    setSelectedProducts(prevProducts => {
-      const newProducts = [...prevProducts];
-      const maxZIndex = Math.max(...Object.values(newProducts.map(p => p.zIndex)), 0);
-      const productIndex = newProducts.findIndex(p => p.pk === pk);
-      if(productIndex !== -1){
-        newProducts[productIndex].zIndex = maxZIndex + 1;
-      }
-      return newProducts;
+    setProductZIndexes((prevZIndexes) => {
+      const maxZIndex = Math.max(...Object.values(prevZIndexes), 0);
+      return { ...prevZIndexes, [pk]: maxZIndex + 1 };
     });
   };
-
   const toggleProduct = (product) => {
     const existingProductIndex = selectedProducts.findIndex(p => 
       p.id === product.id &&
@@ -163,6 +158,8 @@ function WeddingDeco() {
           handleDownload={handleDownload}
           setSelectedProducts={setSelectedProducts}
           handleDelete={handleDelete}
+          handleMoveToFront={handleMoveToFront}
+          productZIndexes={productZIndexes}
         />
       </React.Suspense>
       <React.Suspense fallback={<div className="loading-overlay"><span></span></div>}>
