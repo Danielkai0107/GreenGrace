@@ -1,0 +1,21 @@
+.shopCart {
+  width: 100vw;
+  height: 100vh;
+  margin-top: $navbar-height;
+  display: flex;
+  h1 {
+
+  }
+  .cart-info {
+    width: 60%;
+    border: 1px solid red;
+  }
+  .pay-info {
+    width: 40%;
+    border: 1px solid blue;
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}

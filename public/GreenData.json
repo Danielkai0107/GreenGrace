@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "name": "合果芋",
+    "price": 300,
+    "sizeInfo": "60 x 45 cm",
+    "categoryName": "小型植栽",
+    "categoryNameEn": "｜Small Plant",
+    "LayerSize": "g-2",
+    "selectedVariantIndex": 0,
+    "variants": [
+      {
+        "color": "#B29F8E",
+        "info":"水泥盆",
+        "productImage": "GreenProducts/plant2.png",
+        "displayImage": "GreenProducts/plant2.png"
+      },
+      {
+        "color": "#C5B67B",
+        "info":"陶盆",
+        "productImage": "GreenProducts/plant2-1.png",
+        "displayImage": "GreenProducts/plant2-1.png"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "天堂鳥",
+    "price": 6400,
+    "sizeInfo": "120 x 50 cm",
+    "categoryName": "大型植栽",
+    "categoryNameEn": "｜Large Plant",
+    "LayerSize": "g-1",
+    "selectedVariantIndex": 0,
+    "variants": [
+      {
+        "color": "#997F68",
+        "info":"水泥盆",
+        "productImage": "GreenProducts/plant1.png",
+        "displayImage": "GreenProducts/plant1.png"
+      },
+      {
+        "color": "#7D8758",
+        "info":"樹酯盆",
+        "productImage": "GreenProducts/plant1-1.png",
+        "displayImage": "GreenProducts/plant1-1.png"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "琴葉榕",
+    "price": 3300,
+    "sizeInfo": "120 x 50 cm",
+    "categoryName": "大型植栽",
+    "categoryNameEn": "｜Large Plant",
+    "LayerSize": "g-1",
+    "selectedVariantIndex": 0,
+    "variants": [
+      {
+        "color": "#997F68",
+        "info":"水泥盆",
+        "productImage": "GreenProducts/plant1-1.png",
+        "displayImage": "GreenProducts/plant1-1.png"
+      },
+      {
+        "color": "#7D8758",
+        "info":"樹酯盆",
+        "productImage": "GreenProducts/plant1-1.png",
+        "displayImage": "GreenProducts/plant1-1.png"
+      }
+    ]
+  }
+]

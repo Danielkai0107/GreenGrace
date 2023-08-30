@@ -1,0 +1,128 @@
+.home {
+  width: 100vw;
+  height: calc(100vh - $navbar-height);
+  margin-top: $navbar-height;
+  .p1, .p2, .p3 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1.6s ease-in-out; /* Added this line */
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+  .p1 {
+    background-image: url('../../images/HomeBgc/p1.jpeg');
+  }
+  .p2 {
+    background-image: url('../../images/HomeBgc/p2.jpeg');
+  }
+  .p3 {
+    background-image: url('../../images/HomeBgc/p3.jpeg');
+  }
+  .active {
+    opacity: 1; /* Updated this line */
+  }
+  figure {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba($color: #000, $alpha: .5);
+  }
+}
+
+.context-home {
+  margin-bottom: 6rem;
+  z-index: 11;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+  //MD
+  @include md {
+    margin-bottom: 4rem;
+  }
+  p,span {
+    color: #fff;
+    white-space: nowrap;
+  }
+  .logo-zh {
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 1rem;
+    margin-left: 1rem;
+    //MD
+    @include md {
+      letter-spacing: 2rem;
+      margin-left: 2rem;
+    }
+  }
+  .main {
+    font-size: 2rem;
+    font-weight: 200;
+    letter-spacing: 4px;
+    margin-left: 4px;
+    span {
+      font-weight: 300;
+    }
+    //MD
+    @include md {
+      font-size: 3rem;
+    }
+  }
+  .second {
+    display: none;
+    //MD
+    @include md {
+      display: block;
+      font-size: 1rem;
+      font-weight: 300;
+      letter-spacing: 6px;
+      margin-left: 6px;
+    }
+  }
+  .second-sm {
+    font-size: 1rem;
+    font-weight: 300;
+    letter-spacing: 6px;
+    margin-left: 6px;
+    //MD
+    @include md {
+    display: none;
+    }
+  }
+  a {
+    // font-family: 'Noto Serif TC', serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 2rem;
+    border: 1px solid #fff;
+    border-radius: .5rem;
+    color:#fff;
+    letter-spacing: 2px;
+    transition: all 0.1s;
+    &:hover {
+      background-color: #fff;
+      color: #000;
+    }
+    &:active {
+      scale: 0.9;
+    }
+  }
+}
+
+.home-btn {
+  display: flex;
+  gap: 1rem;
+}

@@ -1,0 +1,227 @@
+.containerB {
+  width: 100%;
+  aspect-ratio: 16/9;
+  //MD
+  @include md {
+    width: 70%;
+  }
+  //LG
+  @include lg {
+    width: 100%;
+  }
+  .displayIMG-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    transition: all 0.4s;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 1.4rem;
+    box-shadow: 0 0 9.8px 0 rgba(153, 153, 153, 0.6);
+    overflow: hidden;
+    
+    .layer-bgc {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      transition: all 0.4s;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .product-layer {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      aspect-ratio: 16/9;
+      .product-image {
+        width: 100%;
+        object-fit: contain;
+      }
+    }
+  }
+
+  .containerB-btn {
+    position: absolute;
+    right: .5rem;
+    top: .5rem;
+    display: flex;
+    gap: .6rem;
+    //MD
+    @include md {
+      top: .8rem;
+    }
+    .clearBtn {
+      background-color: #fff;
+      box-shadow: 0 0 9.8px 0 rgba(153, 153, 153, 0.5);
+      border-radius: 2rem;
+      border: 2px solid transparent;
+      padding: .5rem;
+      z-index: 103;
+      font-size: .8rem;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: 0.2s;
+      //MD
+      @include md {
+        font-size: .9rem;
+        padding: .6rem;
+      }
+      &:hover {
+        scale: 1;
+        //MD
+        @include md {
+          scale: 1.1;
+        }
+      }
+      &:active {
+        scale: 0.7;
+      }
+    }
+    .download-btn {
+      display: none;
+      //MD
+      @include lg {
+        display: block;
+        width: 2.5rem;
+        height: 2.5rem;
+        background-color: #fff;
+        box-shadow: 0 0 9.8px 0 rgba(153, 153, 153, 0.5);
+        border-radius: 2rem;
+        border: 2px solid transparent;
+        padding: .6rem 1rem;
+        z-index: 100;
+        background-image: url('../../images/Icons/download.png');
+        background-position: center;
+        background-size: 45%;
+        background-repeat: no-repeat;
+        cursor: pointer;
+        transition: 0.2s;
+        &:hover {
+          scale: 1;
+          //MD
+          @include md {
+            scale: 1.1;
+          }
+        }
+        &:active {
+          scale: 0.7;
+        }
+      }
+    }
+    .upload-btn1{
+      display: flex;
+      background-color: #fff;
+      box-shadow: 0 0 9.8px 0 rgba(153, 153, 153, 0.5);
+      border-radius: 2rem;
+      border: 2px solid transparent;
+      padding: .5rem;
+      z-index: 103;
+      font-size: .8rem;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: 0.2s;
+      //MD
+      @include md {
+        font-size: .9rem;
+        padding: .6rem;
+      }
+      &:hover {
+        scale: 1;
+        //MD
+        @include md {
+          scale: 1.1;
+        }
+      }
+      &:active {
+        scale: 0.7;
+      }
+    }
+    .upload-btn2{
+      display: none;
+    }
+  }
+
+  .bgcChanger-btn1 {
+    position: absolute;
+    top: 50%;
+    left: 0.5rem;
+    transform: translate(0,-50%);
+    z-index: 1000;
+      width: 1.8rem;
+      height: 1.8rem;
+      box-shadow: 0 0 9.8px 0 rgba(153, 153, 153, 0.5);
+      border-radius: 4rem;
+      border: 2px solid transparent;
+      cursor: pointer;
+      transition: 0.2s;
+      background-color: #fff;
+      background-size: 50%;
+      background-repeat: no-repeat;
+      background-image: url('../../images/Icons/left-arrow.png');
+      background-position: 45% 50%;
+      &:active {
+        scale: 0.9;
+      }
+  }
+  .bgcChanger-btn2 {
+    position: absolute;
+    top: 50%;
+    right: 0.5rem;
+    transform: translate(0,-50%);
+    z-index: 1000;
+    width: 1.8rem;
+    height: 1.8rem;
+    box-shadow: 0 0 9.8px 0 rgba(153, 153, 153, 0.5);
+    border-radius: 4rem;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: 0.2s;
+    background-color: #fff;
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-image: url('../../images/Icons/right-arrow.png');
+    background-position: 55% 50%;
+    &:active {
+      scale: 0.9;
+    }
+  }
+
+  .scale-btn {
+    position: absolute;
+    right: .5rem;
+    bottom: .5rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: #fff;
+    box-shadow: 0 0 9.8px 0 rgba(153, 153, 153, 0.5);
+    border-radius: 2rem;
+    border: 2px solid transparent;
+    padding: .6rem 1rem;
+    z-index: 100;
+    background-image: url('../../images/Icons/download.png');
+    background-position: center;
+    background-size: 45%;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: 0.2s;
+    &:hover {
+      scale: 1;
+      //MD
+      @include md {
+        scale: 1.1;
+      }
+    }
+    &:active {
+      scale: 0.7;
+    }
+  }
+}

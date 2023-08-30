@@ -1,0 +1,200 @@
+//ProductCard.scss
+@keyframes colorMove {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -90%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -120%);
+  }
+}
+
+.product-card {
+  min-width: 180px;
+  max-width: 180px;
+  display: flex;
+  flex-direction: column;
+  padding: .8rem 1rem;
+  border-radius: 1.4rem;
+  box-shadow: 0 0 6.8px 0 rgba(153, 153, 153, 0.3);
+  border: 1.5px solid transparent;
+  transition: all 0.2s;
+  //LG
+  @include lg {
+    width: 30%;
+    min-width: 160px;
+    max-width: 180px;
+    &:hover {
+      scale: 1.01;
+    }
+  }
+  .product-image {
+    width: 100%;
+    aspect-ratio: 3/2;
+    object-fit: contain;
+  }
+  .content {
+    display: flex;
+    flex-flow: column;
+    gap: .7rem;
+    margin-top: 1rem;
+    .name {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 1.1rem;
+      font-weight: 500;
+      letter-spacing: 2px;
+      margin-top: 0.3rem;
+    }
+    .price {
+      display: flex;
+      align-items: center;
+      font-size: 1.3rem;
+      font-weight: 300;
+      letter-spacing: 1px;
+      span {
+        font-size: 1.1rem;
+        margin-right: .2rem;
+      }
+      //MD
+      @include md {
+        font-weight: 200;
+      }
+    }
+    .size {
+      font-family: 'Noto Sans', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 300;
+      //MD
+      @include md {
+        letter-spacing: 1px;
+      }
+    }
+  }
+
+  .color-selector-container {
+    width: 100%;
+    height: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    p {
+      font-family: 'Noto Sans', sans-serif;
+      font-size: .9rem;
+      font-weight: 300;
+      letter-spacing: 1px;
+    }
+    .color-default {
+      width: .5rem;
+      height: .5rem;
+      border-radius: .5rem;
+    }
+    .color-showBox {
+      margin-right: -.3rem;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 2rem;
+      transition: all 0.2s;
+      cursor: pointer;
+      figure {
+        width: 1.2rem;
+        height: 1.2rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-image: url('../../images/Icons/color.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        cursor: pointer;
+
+      }
+      ul {
+        height: 10rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -120%);
+        display: flex;
+        justify-content: flex-end;
+        flex-flow: column;
+        flex-wrap: wrap-reverse;
+        gap: .5rem;
+        animation: colorMove 0.4s forwards;
+        transition: all 0.1s;
+        &.close {
+          display: none;
+        }
+    
+        li {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 1.8rem;
+          aspect-ratio: 1;
+          border-radius: 50%;
+          border: none;
+          box-shadow: 0 0 9.8px 0 rgba(153, 153, 153, 0.3);
+          cursor: pointer;
+          transition: all 0.1s;
+          span {
+            font-size: .4rem;
+          }
+          &:hover {
+            //LG
+            @include lg {
+            scale: 1.2;
+            }
+            
+          }
+        }
+      }
+    }
+    
+  }
+  .addSelect-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 20;
+    border-radius: 4rem;
+    top: 5%;
+    right: .7rem;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0 9.8px 0 rgba(166, 166, 166, 0.4);
+    transition: 0.1s;
+    background-color: #fff;
+    //LG
+    @include lg {
+      &:hover{scale: 1.2;}
+      &:active{
+        scale: .9;
+      }
+    }
+    li {
+      width: 2rem;
+      height: 2rem;
+      border-radius: 1.8rem;
+      cursor: pointer;
+      background-size: 40%;
+      background-repeat: no-repeat;
+      background-image: url('../../images/Icons/plus.png');
+      background-position: 50% 50%;
+    }
+    span {
+      font-family: 'Noto Sans', sans-serif;
+      font-size: 1rem;
+      font-weight: 300;
+      letter-spacing: 1px;
+      //MD
+      @include md {
+        font-weight: 200;
+      }
+    }
+  }
+}
+
+

@@ -1,0 +1,116 @@
+//ProductList.js
+
+.product-list {
+  width: 100%;
+  margin-bottom: 1rem;
+  h2 {
+      font-size: 1.4rem;
+      font-weight: 300;
+    }
+  h3 {
+      font-size: 1.1rem;
+      font-weight: 300;
+    }
+  h4 {
+      font-size: .8rem;
+      font-weight: 300;
+    }
+    //MD
+    @include md {
+    padding: 0 1rem;
+    }
+  
+
+  .product-list-header {
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .5rem 1rem .5rem 1rem;
+    //LG
+    @include lg {
+      padding: .5rem 1rem;
+    }
+    &-title {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      p {
+        font-size: 1.3rem;
+        font-weight: 400;
+        letter-spacing: 1.5px;
+      }
+      span {
+        font-family: 'Noto Sans', sans-serif;
+        font-size: 1.25rem;
+        font-weight: 300;
+        letter-spacing: 1px;
+      }
+    }
+
+    &-info {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      align-items: center;
+      // .open {
+      //     width: 1.8rem;
+      //     height: 1.8rem;
+      //     background-image: url("../../images/open.png");
+      //     background-size: cover;
+      //     background-repeat: no-repeat;cursor: pointer;
+      //   }
+      
+      // .close {
+      //   width: 1.8rem;
+      //   height: 1.8rem;
+      //   background-image: url("../../images/close.png");
+      //   background-size: cover;
+      //   background-repeat: no-repeat;cursor: pointer;
+      // }
+      .selectedInfo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: .5rem;
+        font-size: 1.5rem;
+        font-weight: 300;
+        color: #A99374;
+
+        span {
+          display: flex;
+          width: .5rem;
+          height: .5rem;
+          border-radius: .5rem;
+          background-color: #A99374;
+          margin-top: 2px;
+        }
+      }
+      .listInfo {
+        font-size: 1rem;
+        letter-spacing: 2px;
+        font-weight: 200;
+      }
+    }
+  } 
+
+  .product-list-items {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: .5rem .5rem .5rem 1rem;
+    overflow: auto;
+    @include scrollbar-style(1px, transparent);
+    //MD
+    @include md {
+    }
+    //LG
+    @include lg {
+    padding: 1rem;
+    flex-wrap: wrap;
+    }
+    
+
+  }
+}

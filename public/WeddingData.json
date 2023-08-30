@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "name": "大布幔",
+    "price": 300,
+    "sizeInfo": "60 x 45 cm",
+    "categoryName": "主背景",
+    "categoryNameEn": "｜Main Props",
+    "LayerSize": "w-1",
+    "selectedVariantIndex": 0,
+    "variants": [
+      {
+        "color": "#B29F8E",
+        "info":"水泥盆",
+        "productImage": "WeddingProducts/mainbgc1.jpeg",
+        "displayImage": "WeddingProducts/mainbgc1.jpeg"
+      },
+      {
+        "color": "#C5B67B",
+        "info":"陶盆",
+        "productImage": "WeddingProducts/plant2-1.png",
+        "displayImage": "WeddingProducts/plant2-1.png"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "花架",
+    "price": 6400,
+    "sizeInfo": "120 x 50 cm",
+    "categoryName": "花藝道具",
+    "categoryNameEn": "｜Flowers",
+    "LayerSize": "w-1",
+    "selectedVariantIndex": 0,
+    "variants": [
+      {
+        "color": "#997F68",
+        "info":"水泥盆",
+        "productImage": "WeddingProducts/plant1.png",
+        "displayImage": "WeddingProducts/plant1.png"
+      },
+      {
+        "color": "#7D8758",
+        "info":"樹酯盆",
+        "productImage": "WeddingProducts/plant1-1.png",
+        "displayImage": "WeddingProducts/plant1-1.png"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "地排花",
+    "price": 3300,
+    "sizeInfo": "120 x 50 cm",
+    "categoryName": "鐵件道具",
+    "categoryNameEn": "｜Iron Props",
+    "LayerSize": "w-1",
+    "selectedVariantIndex": 0,
+    "variants": [
+      {
+        "color": "#997F68",
+        "info":"水泥盆",
+        "productImage": "WeddingProducts/plant1-1.png",
+        "displayImage": "WeddingProducts/plant1-1.png"
+      },
+      {
+        "color": "#7D8758",
+        "info":"樹酯盆",
+        "productImage": "WeddingProducts/plant1-1.png",
+        "displayImage": "WeddingProducts/plant1-1.png"
+      }
+    ]
+  }
+]
