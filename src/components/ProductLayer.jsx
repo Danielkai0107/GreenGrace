@@ -1,11 +1,22 @@
 import React, { useEffect, useState } from 'react'
 import Draggable from 'react-draggable';
-import { layerMenu } from '../constants/layerMenu';
+import { GreenLayer, WeddingLayer } from '../constants/layerMenu';
+import { useLocation } from 'react-router-dom';
 
 function ProductLayer({product,onPositionChange,position,handleDelete,setIsSelectedId,selected,handleMoveToFront,productZIndexes}) {
   
+  const location = useLocation();
   const [imageSrc, setImageSrc] = useState(null);
-  const layerSize = layerMenu.find(item => item.id === product.categoryLayer);
+  let currentLayer;
+  if (location.pathname === '/GreenDeco') {
+    currentLayer = GreenLayer;
+  } else if (location.pathname === '/WeddingDeco') {
+    currentLayer = WeddingLayer;
+  } else {
+    currentLayer = GreenLayer;
+  }
+
+  const layerSize = currentLayer.find(item => item.id === product.categoryLayer);
 
   const handleStop = (e, data) => {
     onPositionChange({ x: data.x, y: data.y });

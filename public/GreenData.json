@@ -6,7 +6,7 @@
     "sizeInfo": "60 x 45 cm",
     "categoryName": "小型植栽",
     "categoryNameEn": "｜Small Plant",
-    "LayerSize": "g-2",
+    "LayerSize": 1,
     "selectedVariantIndex": 0,
     "variants": [
       {
@@ -30,7 +30,7 @@
     "sizeInfo": "120 x 50 cm",
     "categoryName": "大型植栽",
     "categoryNameEn": "｜Large Plant",
-    "LayerSize": "g-1",
+    "LayerSize": 2,
     "selectedVariantIndex": 0,
     "variants": [
       {
@@ -54,7 +54,7 @@
     "sizeInfo": "120 x 50 cm",
     "categoryName": "大型植栽",
     "categoryNameEn": "｜Large Plant",
-    "LayerSize": "g-1",
+    "LayerSize": 3,
     "selectedVariantIndex": 0,
     "variants": [
       {

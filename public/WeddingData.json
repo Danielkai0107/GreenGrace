@@ -6,7 +6,7 @@
     "sizeInfo": "60 x 45 cm",
     "categoryName": "主背景",
     "categoryNameEn": "｜Main Props",
-    "LayerSize": "w-1",
+    "LayerSize": 1,
     "selectedVariantIndex": 0,
     "variants": [
       {
@@ -30,7 +30,7 @@
     "sizeInfo": "120 x 50 cm",
     "categoryName": "花藝道具",
     "categoryNameEn": "｜Flowers",
-    "LayerSize": "w-1",
+    "LayerSize": 2,
     "selectedVariantIndex": 0,
     "variants": [
       {
@@ -54,7 +54,7 @@
     "sizeInfo": "120 x 50 cm",
     "categoryName": "鐵件道具",
     "categoryNameEn": "｜Iron Props",
-    "LayerSize": "w-1",
+    "LayerSize": 3,
     "selectedVariantIndex": 0,
     "variants": [
       {

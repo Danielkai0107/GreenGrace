@@ -2,6 +2,7 @@
 import React, {  useEffect, useState } from "react";
 import ProductLayer from "./ProductLayer";
 import { useLocation } from "react-router-dom";
+import { GreenBgc, WeddingBgc } from "../constants/decoBgc";
 
 
 
@@ -77,9 +78,9 @@ const ContainerB = ({
   //判斷不同網址選擇背景
   useEffect(() => {
     if (location.pathname === "/GreenDeco") {
-        setBgcList(['DecoBgc/a1.jpeg', 'DecoBgc/a2.jpeg']);
+        setBgcList(GreenBgc);
     } else if (location.pathname === "/WeddingDeco") {
-        setBgcList(['DecoBgc/b1.png', 'DecoBgc/b2.jpeg']);
+        setBgcList(WeddingBgc);
       }
   }, [location.pathname]);
 
