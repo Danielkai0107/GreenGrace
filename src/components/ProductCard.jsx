@@ -1,5 +1,7 @@
 // ProductCard.js
 import React, { useState, useEffect } from "react";
+import { ref, uploadBytesResumable, getDownloadURL, list, deleteObject } from "firebase/storage";
+import { storage } from '../lib/firebase';
 
 const ProductCard = ({product,toggleProduct}) => {
 
@@ -14,11 +16,19 @@ const ProductCard = ({product,toggleProduct}) => {
   };
   
   useEffect(() => {
-    import(`../images/${product.variants[selectedVariantIndex].productImage}`)
-      .then((image) => {
-        setImageSrc(image.default);
-      });
-  }, [product, selectedVariantIndex]);
+    fetchImages();
+  }, [selectedVariantIndex]);
+  const fetchImages = async () => {
+    const imageName = product.variants[selectedVariantIndex].productImage;
+    const imageRef = ref(storage, 'images/' + imageName);
+  
+    try {
+      const url = await getDownloadURL(imageRef);
+      setImageSrc(url);
+    } catch (error) {
+      console.error("Error fetching image: ", error);
+    }
+  };
 
   return (
     <li className="product-card" > 
