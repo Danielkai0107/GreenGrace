@@ -1,6 +1,6 @@
 // ProductCard.js
 import React, { useState, useEffect } from "react";
-import { ref, uploadBytesResumable, getDownloadURL, list, deleteObject } from "firebase/storage";
+import { ref, getDownloadURL } from "firebase/storage";
 import { storage } from '../lib/firebase';
 
 const ProductCard = ({product,toggleProduct}) => {
@@ -18,6 +18,7 @@ const ProductCard = ({product,toggleProduct}) => {
   useEffect(() => {
     fetchImages();
   }, [selectedVariantIndex]);
+  
   const fetchImages = async () => {
     const imageName = product.variants[selectedVariantIndex].productImage;
     const imageRef = ref(storage, 'images/' + imageName);
