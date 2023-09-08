@@ -2,32 +2,42 @@
 import React, { useState, useEffect } from "react";
 import { ref, getDownloadURL } from "firebase/storage";
 import { storage } from '../lib/firebase';
+import { useLocation } from 'react-router-dom';
 
 const ProductCard = ({product,toggleProduct}) => {
 
+  const location = useLocation();
   const [imageSrc, setImageSrc] = useState(null);
   const [isExpanded, setIsExpanded] = useState(false);
   const [selectedVariantIndex, setSelectedVariantIndex] = useState(0);
-
-  const handleColorButtonClick = (index) => {
-    if (selectedVariantIndex !== index) {
-      setSelectedVariantIndex(index);  // 改為使用新的state
-    }
-  };
+  const imageName = product.variants[selectedVariantIndex].productImage;
+  //圖片載入
+  let currentIMG;
+  if (location.pathname === '/GreenDeco') {
+    currentIMG = 'PlantIMG/';
+  } else if (location.pathname === '/WeddingDeco') {
+    currentIMG = 'WeddingIMG/';
+  } else {
+    currentIMG = 'PlantIMG/';
+  }
   
   useEffect(() => {
     fetchImages();
-  }, [selectedVariantIndex]);
+  }, [imageName]);
   
   const fetchImages = async () => {
-    const imageName = product.variants[selectedVariantIndex].productImage;
-    const imageRef = ref(storage, 'images/' + imageName);
-  
+    const imageRef = ref(storage, currentIMG + imageName);
     try {
       const url = await getDownloadURL(imageRef);
       setImageSrc(url);
     } catch (error) {
       console.error("Error fetching image: ", error);
+    }
+  };
+
+  const handleColorButtonClick = (index) => {
+    if (selectedVariantIndex !== index) {
+      setSelectedVariantIndex(index);  // 改為使用新的state
     }
   };
 

@@ -3,7 +3,7 @@ import React, { useEffect, useRef } from "react";
 import ProductCard from "./ProductCard";
 
 const ProductList = ({ categoryName, products, selectedProducts, toggleProduct}) => {
-
+  console.log(categoryName);
   const productListRef = useRef(null);
   const updateSelectedVariantIndex = (productId, variantIndex) => {
     const updatedProduct = selectedProducts.find((product) => product.id === productId);
@@ -30,6 +30,7 @@ const ProductList = ({ categoryName, products, selectedProducts, toggleProduct})
       <ul className="product-list-header" >
         <li className="product-list-header-title">
           <p>{categoryName}</p>
+          <span>｜</span>
           <span>{categoryNameEn}</span>
         </li>
         <li className="product-list-header-info">

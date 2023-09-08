@@ -1,25 +1,25 @@
 [
   {
     "id": 1,
-    "name": "合果芋",
+    "name": "龜背芋",
     "price": 300,
     "sizeInfo": "60 x 45 cm",
-    "categoryName": "小型植栽",
-    "categoryNameEn": "｜Small Plant",
+    "categoryName": "小品質栽",
+    "categoryNameEn": "｜Main Props",
     "LayerSize": 1,
     "selectedVariantIndex": 0,
     "variants": [
       {
         "color": "#B29F8E",
         "info":"水泥盆",
-        "productImage": "1.jpeg",
-        "displayImage": "1.jpeg"
+        "productImage": "4.jpeg",
+        "displayImage": "4.jpeg"
       },
       {
         "color": "#C5B67B",
         "info":"陶盆",
-        "productImage": "2.jpeg",
-        "displayImage": "2.jpeg"
+        "productImage": "1.jpg",
+        "displayImage": "1.jpg"
       }
     ]
   }
