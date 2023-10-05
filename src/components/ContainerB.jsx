@@ -44,7 +44,6 @@ const ContainerB = ({
       }
   };
   
-
   //背景圖片讀取
   useEffect(() => {
     const currentImage = bgcList[currentImageIndex];
@@ -83,7 +82,7 @@ const ContainerB = ({
         setBgcList(WeddingBgc);
       }
   }, [location.pathname]);
-
+  
   return (
     <article className="containerB">
       <section className="containerB-btn">

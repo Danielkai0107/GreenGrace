@@ -1,3 +1,4 @@
+// ProductLayer.js
 import React, { useEffect, useState } from 'react'
 import Draggable from 'react-draggable';
 import { GreenLayer, WeddingLayer } from '../constants/layerMenu';

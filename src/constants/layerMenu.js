@@ -37,8 +37,8 @@ export const WeddingLayer = [
   {
     id:2,
     name:'middle',
-    width:'18%',
-    ratio:'1/2',
+    width:'34%',
+    ratio:'1',
     className:'',
     axis: null
   },
@@ -50,4 +50,12 @@ export const WeddingLayer = [
     className:'',
     axis: null
   },
+  {
+    id:4,
+    name:'large',
+    width:'15%',
+    ratio:'1/2',
+    className:'',
+    axis: null
+  }
 ]
