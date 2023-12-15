@@ -30,7 +30,7 @@ function Home() {
           <p className='second-sm'>打造您的綠色空間</p>
           <section className='home-btn'>
             <Link to='/GreenDeco'>植栽佈置</Link>
-            <Link to='/WeddingDeco'>婚禮佈置</Link>
+            {/* <Link to='/WeddingDeco'>婚禮佈置</Link> */}
           </section>
         </li>
       </ul>
@@ -43,7 +43,7 @@ function Home() {
           <p className='second-sm'>一站式解決佈置困擾</p>
           <section className='home-btn'>
             <Link to='/GreenDeco'>植栽佈置</Link>
-            <Link to='/WeddingDeco'>婚禮佈置</Link>
+            {/* <Link to='/WeddingDeco'>婚禮佈置</Link> */}
           </section>
         </li>
       </ul>
@@ -56,7 +56,7 @@ function Home() {
           <p className='second-sm'>編織夢想空間</p>
           <section className='home-btn'>
             <Link to='/GreenDeco'>植栽佈置</Link>
-            <Link to='/WeddingDeco'>婚禮佈置</Link>
+            {/* <Link to='/WeddingDeco'>婚禮佈置</Link> */}
           </section>
         </li>
       </ul>

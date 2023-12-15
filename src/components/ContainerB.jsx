@@ -7,15 +7,26 @@ import { GreenBgc, WeddingBgc } from "../constants/decoBgc";
 
 
 const ContainerB = ({ 
-  selectedProducts,setSelectedProducts,handleDownload,handleDelete,productZIndexes,handleMoveToFront }) => {
+  selectedProducts,setSelectedProducts,handleDownload,handleDelete }) => {
 
   const [imageSrc, setImageSrc] = useState(null);
   const [bgcList, setBgcList] = useState([]);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [productPositions, setProductPositions] = useState({});
   const [isSelectedId, setIsSelectedId] = useState(null);
+  const [zIndexCounter, setZIndexCounter] = useState(0);
   const location = useLocation();
-
+  
+  const handleMoveToFront = (pk) => {
+    setProductPositions((prevPositions) => ({
+      ...prevPositions,
+      [pk]: {
+        ...prevPositions[pk],
+        zIndex: zIndexCounter
+      }
+    }));
+    setZIndexCounter(zIndexCounter + 1);
+  };
 
   //清除按鈕功能
   const handleClearSelect = () => {
@@ -89,7 +100,7 @@ const ContainerB = ({
         <span className='clearBtn' onClick={handleClearSelect} onTouchStart={handleClearSelect}>清空</span>
         {/* <label htmlFor="upload-input" className="upload-btn1">上傳</label> */}
         <input id="upload-input" className="upload-btn2" type="file" accept="image/*" onChange={handleUpload}/>
-        <span className="download-btn" onClick={handleDownload} onTouchStart={handleDownload}></span>
+        {/* <span className="download-btn" onClick={handleDownload} onTouchStart={handleDownload}></span> */}
       </section>
       <span className="bgcChanger-btn1" 
       onClick={() => handleBackgroundChange('pre')}
@@ -130,7 +141,6 @@ const ContainerB = ({
                   setIsSelectedId={setIsSelectedId}
                   selected={isSelectedId === selectedProduct.pk}
                   handleMoveToFront={() => handleMoveToFront(selectedProduct.pk)}
-                  productZIndexes={productZIndexes}
                 />
               ));
             })

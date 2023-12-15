@@ -6,7 +6,7 @@ import { useLocation } from 'react-router-dom';
 import { ref, getDownloadURL } from "firebase/storage";
 import { storage } from '../lib/firebase';
 
-function ProductLayer({product,onPositionChange,position,handleDelete,setIsSelectedId,selected,handleMoveToFront,productZIndexes}) {
+function ProductLayer({product,onPositionChange,position,handleDelete,setIsSelectedId,selected,handleMoveToFront}) {
   
   const location = useLocation();
   const [imageSrc, setImageSrc] = useState(null);
@@ -44,7 +44,6 @@ function ProductLayer({product,onPositionChange,position,handleDelete,setIsSelec
   const handleStop = (e, data) => {
     onPositionChange({ x: data.x, y: data.y });
     setIsSelectedId(product.pk);
-    handleMoveToFront()
   };
   const handleDeleteWithPrevent = (e, pk) => {
     e.preventDefault();
@@ -65,9 +64,12 @@ function ProductLayer({product,onPositionChange,position,handleDelete,setIsSelec
           width: layerSize.width,
           aspectRatio: layerSize.ratio,
           backgroundImage: `url(${imageSrc})`,
-          zIndex: productZIndexes[product.pk] || 0
+          zIndex: position?.zIndex || 0  // Use the zIndex from position state
         }} // 在点击时调用 handleMoveToFront 函数
-        onClick={(e)=>{setIsSelectedId(product.pk)}}
+        onClick={(e)=>{
+          setIsSelectedId(product.pk);
+          handleMoveToFront();
+        }}
       >
         {selected &&  <ul className='edit-btn'>
         <li onClick={(e) => {handleDeleteWithPrevent(e, product.pk);}} onTouchStart={(e) => {handleDeleteWithPrevent(e, product.pk);}}></li>

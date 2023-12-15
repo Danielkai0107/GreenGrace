@@ -20,7 +20,6 @@ function Main() {
   const [dataReady, setDataReady] = useState()
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [isTopButton, setIsTopButton] = useState(false);
-  const [productZIndexes, setProductZIndexes] = useState({});
   const [selectedProducts, setSelectedProducts] = useState([]);
   const totalSelected = selectedProducts.reduce(
     (acc, product) => acc + product.quantity,
@@ -38,20 +37,13 @@ function Main() {
   const getUniqueCategories = () => {
     return [...new Set(sortedProducts.map((product) => product.categoryName))];
   };
-  console.log(sortedProducts);
-  
+
   const totalPrice = selectedProducts.reduce(
     (acc, product) => acc + product.price * product.quantity,
     0
     ).toLocaleString();
 
   // Handler Functions
-  const handleMoveToFront = (pk) => {
-    setProductZIndexes((prevZIndexes) => {
-      const maxZIndex = Math.max(...Object.values(prevZIndexes), 0);
-      return { ...prevZIndexes, [pk]: maxZIndex + 1 };
-    });
-  };
   const toggleProduct = (product) => {
     const existingProductIndex = selectedProducts.findIndex(p => 
       p.id === product.id &&
@@ -89,7 +81,6 @@ function Main() {
         displayImage: product.variants[product.selectedVariantIndex].productImage,
         quantity: 1
       }]);
-      handleMoveToFront(product.pk);
     }
   };
   const handleDelete = (pk) => {
@@ -170,8 +161,6 @@ function Main() {
           handleDownload={handleDownload}
           setSelectedProducts={setSelectedProducts}
           handleDelete={handleDelete}
-          handleMoveToFront={handleMoveToFront}
-          productZIndexes={productZIndexes}
         />
       </React.Suspense>
       <React.Suspense fallback={<div className="loading-overlay"><span></span></div>}>
